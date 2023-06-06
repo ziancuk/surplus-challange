@@ -13,4 +13,7 @@ class Category extends Model
         'enable',
     ];
 
+    public function product() {
+        return $this->belongsToMany(Product::class, 'category_product');
+    }
 }

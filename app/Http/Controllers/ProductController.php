@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\ProductImage;
 use Illuminate\Http\Request;
 use App\SurplusHelper;
 use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
-    public function list(Request $request)
+    public function list()
     {
         //query to category model
         $data = Product::get()->all();

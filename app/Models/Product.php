@@ -13,4 +13,11 @@ class Product extends Model
         'description',
         'enable',
     ];
+
+    public function category() {
+        return $this->belongsToMany(Category::class, 'category_products');
+    }
+    public function image() {
+        return $this->belongsToMany(Image::class, 'product_images');
+    }
 }

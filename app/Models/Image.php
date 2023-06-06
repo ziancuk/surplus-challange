@@ -7,5 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Image extends Model
 {
-    use HasFactory;
+    public $timestamps = true;
+    protected $fillable = [
+        'name',
+        'file',
+        'enable',
+    ];
+
+    public function product() {
+        return $this->belongsToMany(Product::class, 'product_image');
+    }
 }
